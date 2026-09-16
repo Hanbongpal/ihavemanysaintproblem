@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘 뭐 먹지? - 음식 추천 서비스</title>
+    <style>
+        /* 기본 스타일 초기화 및 폰트 설정 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: space-between;
+        }
+
+        /* 헤더 영역 */
+        header {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 24px;
+        }
+
+        /* 메인 컨텐츠 영역 */
+        main {
+            text-align: center;
+            padding: 40px 20px;
+            flex: 1;
+        }
+        .intro-text {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        /* 추천 결과 박스 */
+        .result-box {
+            background-color: white;
+            border: 2px dashed #ff6b6b;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 400px;
+            margin: 0 auto 30px auto;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .result-box h2 {
+            font-size: 28px;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+        }
+
+        /* 버튼 스타일 */
+        .recommend-btn {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+            box-shadow: 0 4px 10px rgba(255, 107, 107, 0.4);
+        }
+        .recommend-btn:hover {
+            background-color: #fa5252;
+        }
+        .recommend-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* 푸터 영역 */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header>
+        <h1>🍽️ 오늘 뭐 먹지?</h1>
+    </header>
+
+    <!-- 메인 내용 -->
+    <main>
+        <p class="intro-text">메뉴 고르기가 귀찮을 때, 버튼을 눌러 메뉴를 추천받아보세요!</p>
+
+        <!-- 음식이 출력될 공간 -->
+        <div class="result-box">
+            <h2 id="food-result">메뉴를 추천해드려요!</h2>
+            <p id="food-desc">버튼을 클릭해보세요 👇</p>
+        </div>
+
+        <!-- 추천 버튼 -->
+        <button class="recommend-btn" onclick="recommendFood()">메뉴 추천 받기</button>
+    </main>
+
+    <!-- 푸터 -->
+    <footer>
+        <p>&copy; 2026 What To Eat. All rights reserved.</p>
+    </footer>
+
+    <!-- 자바스크립트 (버튼 클릭 시 메뉴가 바뀌는 기능) -->
+    <script>
+        const foodList = [
+            { name: "치킨 🍗", desc: "바삭바삭 맛있는 국민 야식/메뉴!" },
+            { name: "짜장면 🍜", desc: "달콤 짭조름한 중화요리의 대표주자!" },
+            { name: "김치찌개 🍲", desc: "얼큰하고 칼칼한 한국인의 소울푸드!" },
+            { name: "초밥 🍣", desc: "신선한 회와 밥의 조화!" },
+            { name: "떡볶이 떡 🍢", desc: "매콤달콤 언제 먹어도 질리지 않는 분식!" },
+            { name: "삼겹살 🥩", desc: "지글지글 구워 먹는 기름진 행복!" },
+            { name: "파스타 🍝", desc: "분위기 있는 식사를 원할 때!" },
+            { name: "햄버거 🍔", desc: "든든하고 간편하게 즐기는 패스트푸드!" }
+        ];
+
+        function recommendFood() {
+            // 랜덤으로 음식 인덱스 선택
+            const randomIndex = Math.floor(Math.random() * foodList.length);
+            const selectedFood = foodList[randomIndex];
+
+            // 화면에 반영
+            document.getElementById("food-result").innerText = selectedFood.name;
+            document.getElementById("food-desc").innerText = selectedFood.desc;
+        }
+    </script>
+
+</body>
+</html>
