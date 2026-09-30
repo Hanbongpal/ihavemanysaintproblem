@@ -1,0 +1,37 @@
+*{box-sizing:border-box}body{margin:0;background:#f3f4f8;color:#17181c;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.app{max-width:540px;margin:auto;min-height:100vh;background:#fff;padding:25px 21px 100px}
+.top{display:flex;justify-content:space-between;align-items:center}.title{font-size:28px;font-weight:800}.plus{width:46px;height:46px;border:0;border-radius:50%;background:#655cf6;color:#fff;font-size:29px;cursor:pointer}
+.now{text-align:center;padding:35px 0}.nowtime{font-size:64px;font-weight:300;letter-spacing:-3px}.date{color:#777;margin-top:3px}
+.tabs{display:flex;background:#f0f0f4;border-radius:12px;padding:3px;margin-bottom:20px}.tab{flex:1;border:0;background:transparent;padding:10px;border-radius:10px;cursor:pointer;font-weight:650}.tab.active{background:#fff;box-shadow:0 1px 5px #0001}
+.section{font-size:13px;font-weight:750;color:#777;margin:15px 0 8px}.alarm{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:17px 1px;border-bottom:1px solid #eee}.alarm.off{opacity:.42}.alarmtime{font-size:40px;font-weight:300}.meta{font-size:13px;margin-top:5px;word-break:break-word}.sub{font-size:12px;color:#888;margin-top:3px;word-break:break-word}
+.switch{flex:none;width:50px;height:30px;border-radius:20px;background:#d6d6dc;padding:3px;cursor:pointer}.switch i{display:block;width:24px;height:24px;background:#fff;border-radius:50%;transition:.2s}.switch.on{background:#655cf6}.switch.on i{transform:translateX(20px)}
+.empty{text-align:center;color:#999;padding:35px}
+.sheetwrap,.ring{position:fixed;inset:0;background:#0007;display:none;align-items:flex-end;justify-content:center;z-index:5}.show{display:flex}.sheet{background:#fff;width:min(540px,100%);border-radius:24px 24px 0 0;padding:23px 21px 30px;max-height:90vh;overflow:auto}.sheet h2{margin:0 0 18px}
+input,select,textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;font:inherit;background:#fff}textarea{resize:vertical}label{display:block;font-size:13px;font-weight:700;margin:12px 0 6px}
+.bigtime{font-size:48px;text-align:center;border:0;font-weight:300}.days{display:flex;gap:7px;margin:10px 0}.day{flex:1;aspect-ratio:1;border-radius:50%;border:1px solid #ddd;background:#fff;cursor:pointer}.day.sel{background:#655cf6;color:#fff;border-color:#655cf6}
+.mode{display:flex;gap:8px}.mode button{flex:1;padding:11px;border:1px solid #ddd;background:#fff;border-radius:10px;cursor:pointer}.mode button.sel{background:#655cf6;color:#fff;border-color:#655cf6}
+.actions{display:flex;gap:9px;margin-top:18px}.actions button{flex:1;padding:13px;border:0;border-radius:11px;font-weight:700;cursor:pointer}.cancel{background:#eee}.save{background:#655cf6;color:#fff}
+.ring{align-items:center;background:#111e}.ringbox{background:#fff;border-radius:22px;padding:25px;text-align:center;width:min(440px,90%)}.ringtime{font-size:65px;font-weight:250}.ringnote{background:#f7f7fa;border-radius:10px;padding:10px 12px;margin:10px 0;font-size:14px;white-space:pre-wrap;display:none}.ringbox button{padding:13px 25px;border:0;border-radius:11px;background:#655cf6;color:#fff;font-weight:700;cursor:pointer}
+.player{width:1px;height:1px;opacity:0;position:absolute;left:-100px;top:-100px}
+.info{font-size:11px;color:#888;margin-top:6px;line-height:1.4}
+
+/* 접이식 상세 설정 */
+.acc{border:1px solid #eee;border-radius:12px;margin:10px 0;overflow:hidden}
+.acchead{width:100%;display:flex;justify-content:space-between;align-items:center;padding:13px 14px;background:#f7f7fa;border:0;font:inherit;font-weight:700;cursor:pointer;text-align:left}
+.chev{transition:.2s;color:#888}.acc.open .chev{transform:rotate(180deg)}
+.accbody{display:none;padding:2px 14px 14px}.acc.open .accbody{display:block}
+.form:not(.pm) .g-pomo,.form.pm .g-norm{display:none}
+.dur{display:flex;align-items:center;gap:6px}.dur input{flex:1;min-width:0}.dur span{font-size:13px;color:#777;margin-right:6px}
+.chk{display:flex;align-items:center;gap:8px;font-size:14px}.chk input{width:auto}
+.presets{display:flex;gap:8px}.presets button{flex:1;padding:11px 4px;border:1px solid #ddd;background:#fff;border-radius:10px;cursor:pointer}.presets button.sel{background:#655cf6;color:#fff;border-color:#655cf6}
+input:disabled,.presets button:disabled{opacity:.45;cursor:not-allowed}
+
+/* 포모도로 탭 */
+.pclock{text-align:center;padding:8px 0 4px}.pphase{display:inline-block;font-size:13px;font-weight:750;padding:5px 14px;border-radius:20px;background:#eee;color:#555}.pphase.focus{background:#e9e7ff;color:#655cf6}.pphase.rest{background:#dff5e7;color:#1f8a4c}.pphase.done{background:#fff1d6;color:#a86a00}
+.ptime{font-size:76px;font-weight:250;letter-spacing:-3px;margin:8px 0}.pbar{height:6px;background:#eee;border-radius:6px;overflow:hidden}.pbar i{display:block;height:100%;width:0;background:#655cf6;transition:width .25s linear}.pround{font-size:13px;color:#777;margin-top:8px}
+.pnoteview{background:#f7f7fa;border-left:4px solid #655cf6;border-radius:8px;padding:11px 13px;margin-top:14px;font-size:14px;line-height:1.45;white-space:pre-wrap}
+.pbtns{display:flex;gap:9px;margin:16px 0}.pbtns button{padding:14px;border:0;border-radius:11px;font-weight:700;font-size:15px;cursor:pointer}.pmain{flex:2;background:#655cf6;color:#fff}.pres{flex:1;background:#eee}
+.headr{display:flex;align-items:center;gap:12px}
+.acchead .notesw{width:44px;height:26px;padding:3px}.acchead .notesw i{width:20px;height:20px}.acchead .notesw.on i{transform:translateX(18px)}
+.acc.noteoff .notefield{opacity:.45}.acc.noteoff textarea{background:#f3f3f6}
+.notehint{display:none}.acc.noteoff .notehint{display:block}
